@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "portfolio-262ba"
+  },
+  "targets": {
+    "portfolio-262ba": {
+      "hosting": {
+        "portfolio": [
+          "huynh-tri-hieu"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
