@@ -1,0 +1,24 @@
+
+/* Step 3 visual refinement */
+:root{--mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Consolas,monospace}
+.eyebrow,.tag,.project-status{font-family:var(--mono)}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#f7f9fc 0%,#edf3ff 68%,#f7f9fc 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(29,78,216,.16) .7px,transparent .8px);background-size:19px 19px;mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.7) 48%,transparent 100%)}
+.hero-grid{position:relative;z-index:1}
+.availability-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.32rem .65rem;margin:0 0 1rem;border:1px solid #d4e2d8;border-radius:999px;background:rgba(255,255,255,.78);color:#344b3a;font-size:.72rem;font-weight:600}
+.availability-badge>span{width:8px;height:8px;border-radius:50%;background:#219653;box-shadow:0 0 0 3px rgba(33,150,83,.12)}
+.button-disabled{min-height:44px;padding:.65rem 1rem;border-radius:10px;font-size:.86rem;line-height:1.4}
+.button-primary.button-disabled{background:#eef0f4;color:#687386;border-color:#dce1e8;box-shadow:none}
+.button-disabled:hover{transform:none;cursor:not-allowed}
+.project-image{height:158px}
+.certificate-image{height:120px}
+.project-image .image-placeholder,.certificate-image .image-placeholder{min-height:0}
+.activity-mark svg{width:22px;height:22px;display:block}
+.architecture-svg{display:block;width:100%;height:auto;overflow:visible}
+.architecture-svg .diagram-edge{fill:none;stroke:var(--blue);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#diagram-arrow)}
+.architecture-svg .diagram-node rect{fill:var(--white);stroke:var(--line);stroke-width:1.5}
+.architecture-svg .diagram-node text{fill:var(--ink);font-family:var(--mono);font-size:14px;text-anchor:middle}
+.architecture-svg .diagram-node.main rect{fill:var(--blue);stroke:var(--blue)}
+.architecture-svg .diagram-node.main text{fill:#fff;font-weight:600}
+.architecture-figure{margin:0;padding:1rem;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+@media(max-width:760px){.availability-badge{font-size:.66rem}.project-image{height:143px}.certificate-image{height:143px}}
