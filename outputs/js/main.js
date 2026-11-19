@@ -132,6 +132,39 @@
       link.addEventListener('click', event => event.preventDefault());
     }
   });
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    document.querySelectorAll('.slide-card, .detail-hero, .detail-block, .detail-aside').forEach((item, index) => {
+      item.classList.add('motion-reveal');
+      item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 55}ms`);
+      revealObserver.observe(item);
+    });
+  }
+  const readingProgress = document.createElement('div');
+  readingProgress.className = 'reading-progress';
+  readingProgress.setAttribute('aria-hidden', 'true');
+  document.body.append(readingProgress);
+  let progressFrame = 0;
+  const updateReadingProgress = () => {
+    if (progressFrame) return;
+    progressFrame = requestAnimationFrame(() => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+      readingProgress.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+      progressFrame = 0;
+    });
+  };
+  window.addEventListener('scroll', updateReadingProgress, { passive: true });
+  window.addEventListener('resize', updateReadingProgress);
+  updateReadingProgress();
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
 })();

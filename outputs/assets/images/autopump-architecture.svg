@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title description">
+  <title id="title">Sơ đồ kiến trúc hệ thống AutoPump</title>
+  <desc id="description">Điện thoại hoặc máy tính giao tiếp với bộ chấp hành ESP32 qua Wi-Fi và HTTP; tay cầm ESP32 với màn hình TFT và joystick gửi lệnh qua ESP-NOW. Bộ chấp hành đọc cảm biến áp suất, điều khiển rơ-le máy bơm, lưu cấu hình trên SPIFFS và thời gian trên RTC DS3231.</desc>
+  <defs>
+    <marker id="arrow-lavender" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0 0 18 9 0 18Z" fill="#ae98ff"/></marker>
+    <marker id="arrow-blue" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0 0 18 9 0 18Z" fill="#4d8fff"/></marker>
+    <marker id="arrow-gray" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto"><path d="M0 0 18 9 0 18Z" fill="#b8b8b8"/></marker>
+    <filter id="soft-shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity=".35"/></filter>
+    <style>
+      text{font-family:Inter,Arial,sans-serif;text-anchor:middle;dominant-baseline:middle}
+      .input{fill:#b7a0ff}.input-text{fill:#142039;font-size:30px;font-weight:600}
+      .chip{fill:#10254c}.chip-text{fill:#a9caff;font-size:25px}
+      .controller{fill:#1178bd}.controller-title{fill:#eef6ff;font-size:38px;font-weight:700}.controller-sub{fill:#eef6ff;font-size:26px}
+      .output{fill:#10254c;stroke:#aebbd0;stroke-width:2}.output-text{fill:#e7edf8;font-size:28px}
+      .line-lavender{fill:none;stroke:#ae98ff;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+      .line-blue{fill:none;stroke:#4d8fff;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+      .line-gray{fill:none;stroke:#b8b8b8;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1200" height="800" rx="26" fill="#050505"/>
+
+  <path class="line-lavender" d="M287 160V174" marker-end="url(#arrow-lavender)"/>
+  <path class="line-lavender" d="M913 160V174" marker-end="url(#arrow-lavender)"/>
+  <path class="line-lavender" d="M287 232V270" marker-end="url(#arrow-lavender)"/>
+  <path class="line-lavender" d="M913 232V270" marker-end="url(#arrow-lavender)"/>
+  <path class="line-blue" d="M600 428V446H247V456" marker-end="url(#arrow-blue)"/>
+  <path class="line-blue" d="M600 428V446H953V456" marker-end="url(#arrow-blue)"/>
+  <path class="line-gray" d="M247 632V652" marker-end="url(#arrow-gray)"/>
+  <path class="line-gray" d="M953 632V652" marker-end="url(#arrow-gray)"/>
+
+  <g filter="url(#soft-shadow)">
+    <rect class="input" x="52" y="48" width="470" height="112" rx="24"/>
+    <rect class="input" x="678" y="48" width="470" height="112" rx="24"/>
+    <text class="input-text" x="287" y="104">Điện thoại / máy tính</text>
+    <text class="input-text" x="913" y="84">Tay cầm ESP32 +</text>
+    <text class="input-text" x="913" y="124">TFT + joystick</text>
+
+    <rect class="chip" x="147" y="184" width="280" height="48" rx="17"/>
+    <rect class="chip" x="773" y="184" width="280" height="48" rx="17"/>
+    <text class="chip-text" x="287" y="208">Wi-Fi / HTTP</text>
+    <text class="chip-text" x="913" y="208">ESP-NOW</text>
+
+    <rect class="controller" x="190" y="290" width="820" height="138" rx="28"/>
+    <text class="controller-title" x="600" y="343">BỘ CHẤP HÀNH ESP32</text>
+    <text class="controller-sub" x="600" y="389">nhận lệnh · quyết định bật / tắt bơm</text>
+
+    <rect class="chip" x="112" y="468" width="270" height="48" rx="16"/>
+    <rect class="chip" x="818" y="468" width="270" height="48" rx="16"/>
+    <text class="chip-text" x="247" y="492">đọc áp suất</text>
+    <text class="chip-text" x="953" y="492">bật / tắt</text>
+
+    <rect class="output" x="52" y="538" width="390" height="94" rx="22"/>
+    <rect class="output" x="758" y="538" width="390" height="94" rx="22"/>
+    <text class="output-text" x="247" y="585">Cảm biến áp suất</text>
+    <text class="output-text" x="953" y="585">Rơ-le → máy bơm</text>
+
+    <rect class="chip" x="112" y="664" width="270" height="44" rx="15"/>
+    <rect class="chip" x="818" y="664" width="270" height="44" rx="15"/>
+    <text class="chip-text" x="247" y="686">lưu cấu hình</text>
+    <text class="chip-text" x="953" y="686">lưu thời gian</text>
+
+    <rect class="output" x="52" y="726" width="390" height="62" rx="20"/>
+    <rect class="output" x="758" y="726" width="390" height="62" rx="20"/>
+    <text class="output-text" x="247" y="757">SPIFFS</text>
+    <text class="output-text" x="953" y="757">RTC DS3231</text>
+  </g>
+
+</svg>
