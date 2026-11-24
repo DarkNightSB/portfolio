@@ -7,6 +7,9 @@
       "hosting": {
         "portfolio": [
           "huynh-tri-hieu"
+        ],
+        "portfolio-legacy": [
+          "portfolio-262ba"
         ]
       }
     }

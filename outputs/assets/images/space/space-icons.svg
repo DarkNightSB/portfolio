@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1">
+  <defs>
+    <radialGradient id="planetFill" cx="32%" cy="28%" r="78%"><stop offset="0" stop-color="var(--space-cyan,#00e5ff)" stop-opacity=".82"/><stop offset=".62" stop-color="var(--space-blue,#3b82f6)" stop-opacity=".68"/><stop offset="1" stop-color="var(--space-purple,#8b5cf6)" stop-opacity=".78"/></radialGradient>
+    <linearGradient id="shipFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--space-cyan,#00e5ff)" stop-opacity=".86"/><stop offset="1" stop-color="var(--space-blue,#3b82f6)" stop-opacity=".78"/></linearGradient>
+    <linearGradient id="flameFill" x1="0" y1="0" x2="1" y2="0"><stop stop-color="var(--space-amber,#ffb020)"/><stop offset="1" stop-color="var(--space-cyan,#00e5ff)" stop-opacity=".1"/></linearGradient>
+    <style>@keyframes flame-flicker{0%,100%{opacity:.55;transform:scaleX(.82)}50%{opacity:1;transform:scaleX(1.08)}}.space-flame{transform-origin:center;animation:flame-flicker .7s ease-in-out infinite}@media(prefers-reduced-motion:reduce){.space-flame{animation:none;opacity:.8}}</style>
+    <symbol id="ringed-planet" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="108" rx="88" ry="30" fill="none" stroke="var(--space-cyan,#00e5ff)" stroke-opacity=".8" stroke-width="2.3" transform="rotate(-22 100 108)"/>
+      <circle cx="100" cy="100" r="52" fill="url(#planetFill)" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.8"/>
+      <ellipse cx="100" cy="108" rx="88" ry="30" fill="none" stroke="var(--space-blue,#3b82f6)" stroke-opacity=".8" stroke-width="5" stroke-dasharray="120 190" transform="rotate(-22 100 108)"/>
+      <circle cx="82" cy="84" r="7" fill="none" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".35"/><circle cx="119" cy="111" r="4" fill="none" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".28"/>
+    </symbol>
+    <symbol id="small-planet" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="34" fill="url(#planetFill)" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.8"/><path d="M30 42q10-12 20-7m13 26q8-4 11 2" fill="none" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/><circle cx="40" cy="61" r="3" fill="none" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".42"/>
+    </symbol>
+    <symbol id="space-ship" viewBox="0 0 100 80">
+      <path class="space-flame" d="M32 40 6 31l12 9-12 9 26-5" fill="url(#flameFill)"/>
+      <path d="m31 40 37-17q12 17 0 34L31 40Z" fill="url(#shipFill)" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.8" stroke-linejoin="round"/><path d="m52 31-12-20-4 24m16 14-12 20-4-24" fill="var(--space-blue,#3b82f6)" fill-opacity=".55" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="60" cy="40" r="5" fill="var(--space-cream,#dff6ff)" fill-opacity=".9" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.5"/><path d="M71 31q8 9 0 18" fill="none" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".5" stroke-width="1.4"/>
+    </symbol>
+    <symbol id="satellite" viewBox="0 0 120 90">
+      <path d="m43 45-25-17v34l25-17Zm34 0 25-17v34L77 45Z" fill="var(--space-blue,#3b82f6)" fill-opacity=".4" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.6"/><path d="M48 32h24l9 13-9 13H48l-9-13 9-13Z" fill="url(#shipFill)" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".8" stroke-width="1.5"/><path d="m60 32 5-13m-5 39 5 13m-5-39v26M20 37h17m46 0h17M20 45h17m46 0h17M20 53h17m46 0h17" fill="none" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.2"/><circle cx="60" cy="45" r="4" fill="var(--space-cream,#dff6ff)"/>
+    </symbol>
+    <symbol id="asteroid" viewBox="0 0 100 100">
+      <path d="m17 55 8-24 22-13 25 8 14 21-9 27-22 12-27-8-13-23Z" fill="url(#shipFill)" fill-opacity=".72" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.8" stroke-linejoin="round"/><circle cx="42" cy="42" r="5" fill="none" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".45"/><circle cx="64" cy="61" r="3" fill="none" stroke="var(--space-cream,#dff6ff)" stroke-opacity=".38"/><path d="m26 61 9 4m39-24 5 4" stroke="var(--space-blue,#3b82f6)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="star-cluster" viewBox="0 0 120 80">
+      <g fill="var(--space-cream,#dff6ff)"><path d="m18 11 2.8 7.2L28 21l-7.2 2.8L18 31l-2.8-7.2L8 21l7.2-2.8L18 11Zm40 22 2.2 5.8L66 41l-5.8 2.2L58 49l-2.2-5.8L50 41l5.8-2.2L58 33Zm41-23 2.4 6.6L108 19l-6.6 2.4L99 28l-2.4-6.6L90 19l6.6-2.4L99 10Z"/></g><circle cx="34" cy="58" r="1.8" fill="var(--space-cyan,#00e5ff)"/><circle cx="85" cy="63" r="1.8" fill="var(--space-cyan,#00e5ff)"/><path d="M78 18v10m-5-5h10" stroke="var(--space-amber,#ffb020)" stroke-width="1.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="rocket" viewBox="0 0 80 100">
+      <path d="M40 10c16 11 20 31 18 49L40 78 22 59C20 41 24 21 40 10Z" fill="url(#shipFill)" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.8"/><circle cx="40" cy="39" r="7" fill="var(--space-cream,#dff6ff)" fill-opacity=".86"/><path d="m23 49-13 19 20-4m27-15 13 19-20-4M33 75l7 14 7-14" fill="var(--space-blue,#3b82f6)" fill-opacity=".7" stroke="var(--space-cyan,#00e5ff)" stroke-width="1.6" stroke-linejoin="round"/><path class="space-flame" d="m34 77 6 18 6-18-6 5-6-5Z" fill="var(--space-amber,#ffb020)"/>
+    </symbol>
+  </defs>
+</svg>
